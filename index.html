@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Lettre de motivation - Accès restreint</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #121212;
+            color: #f8f8f8;
+            text-align: center;
+            padding: 40px;
+        }
+        #contenu {
+            display: none;
+            margin-top: 30px;
+        }
+        input[type="password"] {
+            padding: 10px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+        }
+        button {
+            padding: 10px 15px;
+            margin-left: 10px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #4caf50;
+            border: none;
+            color: white;
+            border-radius: 5px;
+        }
+        a.button-link {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 12px 20px;
+            background-color: #2196f3;
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 5px;
+        }
+        a.button-link:hover {
+            background-color: #0b7dda;
+        }
+    </style>
+</head>
+<body>
+    <h1>Entrez le code pour accéder à la lettre</h1>
+    <input type="password" id="password" placeholder="Code d'accès">
+    <button onclick="checkPassword()">Valider</button>
+
+    <div id="contenu">
+        <p>Bravo, vous avez trouvé le bon code !</p>
+        <a href="lettre.pdf" target="_blank" class="button-link">📄 Télécharger la lettre de motivation</a>
+    </div>
+
+    <script>
+        function checkPassword() {
+            const password = document.getElementById("password").value;
+            const correctPassword = "bougie";
+            if (password === correctPassword) {
+                document.getElementById("contenu").style.display = "block";
+            } else {
+                alert("Mauvais code. Essayez encore !");
+            }
+        }
+    </script>
+</body>
+</html>
